@@ -10,7 +10,10 @@ export class HeaderComponent implements OnInit {
   showMenu = true;
   searchStatus = true;
 
-  constructor() { }
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
