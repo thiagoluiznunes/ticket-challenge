@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from './user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   user = new User()
 
   constructor(
+    private router: Router,
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<LoginComponent>,
     @Inject(MAT_DIALOG_DATA) data
@@ -39,6 +41,7 @@ export class LoginComponent implements OnInit {
     if (!this.userForm.invalid) {
       this.dialogRef.close(this.userForm.value);
       this.userForm.reset();
+      this.router.navigate(['panel']);
     }
   }
 

@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { PanelComponent } from './panel/panel.component';
+import { PanelDetailResolver } from 'src/app/core/guards/panel-detail.resolver';
 
 
 
@@ -20,6 +22,7 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     LoginComponent,
     SignupComponent,
+    PanelComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,7 @@ import { SignupComponent } from './signup/signup.component';
     MatInputModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [LoginComponent]
+  entryComponents: [LoginComponent],
+  providers: [PanelDetailResolver]
 })
 export class HomeModule { }
