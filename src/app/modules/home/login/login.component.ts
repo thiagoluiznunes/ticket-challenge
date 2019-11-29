@@ -24,8 +24,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.userForm = this.fb.group({
-      email: [this.user.email, [Validators.required]],
-      password: [this.user.password, [Validators.required]],
+      email: [this.user.email, [
+        Validators.required,
+        Validators.pattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"),
+      ]],
+      password: [this.user.password, [
+        Validators.required,
+        Validators.pattern("^(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}"),
+      ]],
     })
   }
 
@@ -33,8 +39,6 @@ export class LoginComponent implements OnInit {
     if (!this.userForm.invalid) {
       this.dialogRef.close(this.userForm.value);
       this.userForm.reset();
-    } else {
-
     }
   }
 
