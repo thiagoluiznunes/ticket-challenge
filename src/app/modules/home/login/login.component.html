@@ -1,0 +1,17 @@
+<h2 class="login-title" mat-dialog-title>{{ title }}</h2>
+
+<mat-dialog-content class="login-dialog" [formGroup]="userForm">
+
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Password" formControlName="password">
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary" (click)="onSubmit()">Save</button>
+</mat-dialog-actions>

@@ -20,15 +20,15 @@
           </a>
         </li>
       </ul>
-      <form *ngIf="searchStatus" class="form-inline mt-2 mt-md-0">
+      <!-- <form *ngIf="searchStatus" class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Busca" aria-label="Busca">
-      </form>
+      </form> -->
       <ul *ngIf="showMenu" class="navbar-nav navbar-right">
         <li class="nav-item active">
-          <a class="nav-link app-login-link" [routerLink]="['/login']">Entrar<span class="sr-only">(current)</span></a>
+          <a (click)="openDialog()" class="nav-link app-login-link">Entrar<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link app-singup-link" [routerLink]="['/signup']">Registrar<span
+          <a class="nav-link app-singup-link">Registrar<span
               class="sr-only">(current)</span></a>
         </li>
       </ul>
